@@ -1,4 +1,4 @@
-# Assimilating PAGES 2k records with LinkedEarth tools
+# Reproducing LMRv2.1 with PAGES2k and LinkedEarth Tools
 
 By [Tanaya Gondhalekar](https://orcid.org/0009-0004-2440-3266), [Deborah Khider](https://orcid.org/0000-0001-7501-8430) & [Julien Emile-Geay](https://orcid.org/0000-0001-5920-4751). 
 
