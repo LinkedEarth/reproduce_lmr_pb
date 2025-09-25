@@ -381,10 +381,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud">Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-proxydatabase-filter-to-filter-by-resolution">Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-the-same-filtering-method-for-archive-type">(Optional) Use the same filtering method for archive type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow">Save as a netCDF file to use in the data assimilation workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">Author</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud">Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-proxydatabase-filter-to-filter-by-resolution">Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-the-same-filtering-method-for-archive-type">(Optional) Use the same filtering method for archive type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow">Save as a netCDF file to use in the data assimilation workflow</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -398,6 +401,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="database-assembly-using-cfr-s-built-in-pages-2k-database">
 <h1>Database Assembly using cfr’s built in PAGES 2k database<a class="headerlink" href="#database-assembly-using-cfr-s-built-in-pages-2k-database" title="Link to this heading">#</a></h1>
+<section id="author">
+<h2>Author<a class="headerlink" href="#author" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://orcid.org/0009-0004-2440-3266">Tanaya Gondhalekar</a></p>
 <p>This notebook walks through the process of building a proxy database containing only the PAGES 2k (v2.0.0) proxy records. This is the most straighforward and shortest way to obtain a ProxyDatabase to use for an emulation of LMRv2.1.</p>
 <p>Key steps include:</p>
 <ul class="simple">
@@ -418,7 +424,7 @@ document.write(`
 </div>
 </div>
 <section id="use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud">
-<h2>Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud<a class="headerlink" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud" title="Link to this heading">#</a></h2>
+<h3>Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud<a class="headerlink" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud" title="Link to this heading">#</a></h3>
 <p>This is a <code class="docutils literal notranslate"><span class="pre">ProxyDatabase</span></code> object</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -429,7 +435,7 @@ document.write(`
 </div>
 </section>
 <section id="use-proxydatabase-filter-to-filter-by-resolution">
-<h2>Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution<a class="headerlink" href="#use-proxydatabase-filter-to-filter-by-resolution" title="Link to this heading">#</a></h2>
+<h3>Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution<a class="headerlink" href="#use-proxydatabase-filter-to-filter-by-resolution" title="Link to this heading">#</a></h3>
 <p>We want only annual and subannually resolved records, hence dt ≤ 1.2 (a little higher than 1.0 as buffer)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -440,7 +446,7 @@ document.write(`
 </div>
 </section>
 <section id="optional-use-the-same-filtering-method-for-archive-type">
-<h2>(Optional) Use the same filtering method for archive type<a class="headerlink" href="#optional-use-the-same-filtering-method-for-archive-type" title="Link to this heading">#</a></h2>
+<h3>(Optional) Use the same filtering method for archive type<a class="headerlink" href="#optional-use-the-same-filtering-method-for-archive-type" title="Link to this heading">#</a></h3>
 <p>Instead of dt, we use ptype to specify which archives we want used. This eliminates certain records despite being annual/subanually resolved.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -465,7 +471,7 @@ document.write(`
 </div>
 </section>
 <section id="save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow">
-<h2>Save as a netCDF file to use in the data assimilation workflow<a class="headerlink" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow" title="Link to this heading">#</a></h2>
+<h3>Save as a netCDF file to use in the data assimilation workflow<a class="headerlink" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filtered_pdb</span><span class="o">.</span><span class="n">to_nc</span><span class="p">(</span><span class="s1">&#39;./prev_data/filtered_res_cfr_pages2kv2.nc&#39;</span><span class="p">)</span>
@@ -511,6 +517,7 @@ document.write(`
 </div>
 </div>
 <p>This notebook is intentionally short, showing how easy it is to this with <code class="docutils literal notranslate"><span class="pre">cfr</span></code>. However, that particular database is frozen in time. To take into account more recent updates to the PAGES 2k paleotemperature database, notebooks C01_c and C01_d showcase how to use the LiPDverse and LiPD Graph, as well as associated Python tools, before feeding the data to <code class="docutils literal notranslate"><span class="pre">cfr</span></code>.</p>
+</section>
 </section>
 </section>
 
@@ -578,10 +585,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud">Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-proxydatabase-filter-to-filter-by-resolution">Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-the-same-filtering-method-for-archive-type">(Optional) Use the same filtering method for archive type</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow">Save as a netCDF file to use in the data assimilation workflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#author">Author</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-cfr-s-fetch-to-pull-pages2kv2-from-the-cloud">Use <em>cfr</em>’s <code class="docutils literal notranslate"><span class="pre">.fetch()</span></code> to pull PAGES2kv2 from the cloud</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#use-proxydatabase-filter-to-filter-by-resolution">Use <code class="docutils literal notranslate"><span class="pre">ProxyDatabase.filter()</span></code> to filter by resolution</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-use-the-same-filtering-method-for-archive-type">(Optional) Use the same filtering method for archive type</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#save-as-a-netcdf-file-to-use-in-the-data-assimilation-workflow">Save as a netCDF file to use in the data assimilation workflow</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
