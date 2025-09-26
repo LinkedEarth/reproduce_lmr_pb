@@ -14,7 +14,7 @@ parts:
             - cfr
       - shortname: ProxyDatabase from cfr
         filename: C01_b_db_assembly_cfr_PAGES2k
-        thumbnail: PAGES2k_logo.png
+        thumbnail: 2knetwork.png
         tags:
           domains:
             - data wrangling
