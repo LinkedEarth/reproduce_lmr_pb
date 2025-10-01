@@ -640,3 +640,4 @@ cython_debug/
 # Android studio 3.1+ serialized cache file
 
 docs/_build/
+*.jupyterlab-workspace
