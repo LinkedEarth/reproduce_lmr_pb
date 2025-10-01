@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Database Assembly using cfr’s built in PAGES 2k database" href="C01_b_db_assembly_cfr_PAGES2k.html" />
-    <link rel="prev" title="Reproducing LMRv2.1 with PAGES2k and LinkedEarth Tools" href="../../README.html" />
+    <link rel="prev" title="Reproducing LMRv2.1 with the cfr package" href="../../README.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,7 +169,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../../README.html">
-                    Reproducing LMRv2.1 with PAGES2k and LinkedEarth Tools
+                    Reproducing LMRv2.1 with the cfr package
                 </a>
             </li>
         </ul>
@@ -607,7 +607,7 @@ document.write(`
 </section>
 <section id="assigning-proxy-type-labels-ptype">
 <h3>Assigning Proxy Type Labels (ptype)<a class="headerlink" href="#assigning-proxy-type-labels-ptype" title="Link to this heading">#</a></h3>
-<p>Each record in the <code class="docutils literal notranslate"><span class="pre">cfr.ProxyDatabase</span></code> is tagged with a <code class="docutils literal notranslate"><span class="pre">ptype</span></code>, which is a combination of the archive and measured variable (e.g., <code class="docutils literal notranslate"><span class="pre">tree.d18O</span></code>, <code class="docutils literal notranslate"><span class="pre">marine.MgCa</span></code>). We generate these using a mapping based on archive and measurement metadata.
+<p>Each record in the <code class="docutils literal notranslate"><span class="pre">cfr.ProxyDatabase</span></code> is tagged with a <code class="docutils literal notranslate"><span class="pre">ptype</span></code>, which is a combination of the archive and observation type (e.g., <code class="docutils literal notranslate"><span class="pre">tree.d18O</span></code>, <code class="docutils literal notranslate"><span class="pre">marine.MgCa</span></code>). We generate these using a mapping based on archive and measurement metadata.
 <br />
 Using this, we want a new column called ‘ptype’. To generate this, we use the function <code class="docutils literal notranslate"><span class="pre">create_ptype</span></code>. The mapping for this function was done by hand, observing records from <em>cfr</em>’s built in ProxyDatabase to get an exact match to the metadata from Tardif’s pickle.</p>
 <div class="cell docutils container">
@@ -1438,7 +1438,7 @@ NAm_185 1.0
 </div>
 <section id="optional-check-for-sparse-records-that-don-t-meet-the-0-5-threshold">
 <h3>(Optional) Check for sparse records that don’t meet the 0.5 threshold.<a class="headerlink" href="#optional-check-for-sparse-records-that-don-t-meet-the-0-5-threshold" title="Link to this heading">#</a></h3>
-<p>LMRv2.1 uses the parameter <code class="docutils literal notranslate"><span class="pre">valid_frac</span></code> to remove records that don’t span more than half of the full length of the record. If the database is cleaned up, chances are this will not be an issue. But it is good to run just in case to see what records get filtered out. Records will get dropped during the calibration step of the data assimilation workflow if they do not meet the overlap requirement as well.</p>
+<p>LMRv2.1 uses the parameter <code class="docutils literal notranslate"><span class="pre">valid_frac</span></code> to remove records that don’t span more than half of the full length of the record. If the database is clean, chances are this will not be an issue. But it is good to run just in case to see what records get filtered out. Records will get dropped during the calibration step of the data assimilation workflow if they do not meet the overlap requirement as well.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">valid_frac</span> <span class="o">=</span> <span class="mf">0.5</span>
@@ -1563,7 +1563,7 @@ NAm_185 1.0
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Reproducing LMRv2.1 with PAGES2k and LinkedEarth Tools</p>
+        <p class="prev-next-title">Reproducing LMRv2.1 with the cfr package</p>
       </div>
     </a>
     <a class="right-next"
