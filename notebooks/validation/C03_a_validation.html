@@ -57,6 +57,8 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/validation/C03_a_validation';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -389,11 +391,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-gmst-against-instrumental-datasets">Validating GMST Against Instrumental Datasets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-giss-surface-temperature-analysis-gistemp">Validate against GISS Surface Temperature Analysis (GISTEMP)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-hadcrut4">Validate against HadCRUT4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-berkeley-earth-surface-temperature-best">Validate against Berkeley Earth Surface Temperature (BEST)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-against-berkeley-earth-surface-temperature-best">Validation against Berkeley Earth Surface Temperature (BEST)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-consensus">Plot Consensus</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-climate-field">Validate Climate Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-climate-field">Validating Climate Field</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-field-reconstruction">Load field reconstruction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-reproduced">Loading reproduced</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-proxy-database-for-overlay">Loading Proxy Database for Overlay</a></li>
@@ -1635,10 +1637,10 @@ Attributes:
 <img alt="../../_images/0e4048d8d0f3fba9b90335e8604eee73cd75a8766e550c3838b3322c3b170697.png" src="../../_images/0e4048d8d0f3fba9b90335e8604eee73cd75a8766e550c3838b3322c3b170697.png" />
 </div>
 </div>
-<p>The reconstruction shows a strong match with HadCRUT4, with a correlation of r=0.91 and CE = 0.64. This is a strong match, especially considering that HadCRUT4 was not used in the calibration (GISTEMPv4 was used for temperature). The reconstruction still aligns well with an independent dataset and shows that the reproduction closely emulates LMRv2.1 as well as the instrumental record.</p>
+<p>The reconstruction shows a strong match with HadCRUT5, with a correlation of <span class="math notranslate nohighlight">\(r=0.93\)</span> and <span class="math notranslate nohighlight">\(CE = 0.61\)</span>. This is a strong match, especially considering that HadCRUT5 was not used in the calibration (GISTEMPv4 was). The reconstruction still aligns well with an independent dataset and shows that the reproduction closely emulates LMRv2.1 as well as the instrumental record. However, there is an important offset between the two, particularly in the late 19th century.</p>
 </section>
-<section id="validate-against-berkeley-earth-surface-temperature-best">
-<h3>Validate against Berkeley Earth Surface Temperature (BEST)<a class="headerlink" href="#validate-against-berkeley-earth-surface-temperature-best" title="Link to this heading">#</a></h3>
+<section id="validation-against-berkeley-earth-surface-temperature-best">
+<h3>Validation against Berkeley Earth Surface Temperature (BEST)<a class="headerlink" href="#validation-against-berkeley-earth-surface-temperature-best" title="Link to this heading">#</a></h3>
 <p>Same process as before, but for <a class="reference external" href="https://berkeleyearth.org/data/">BEST</a>. First we use <code class="docutils literal notranslate"><span class="pre">load_dataset</span></code> using xarray, then convert to a <em>cfr</em> <code class="docutils literal notranslate"><span class="pre">EnsTS</span></code> (Ensemble Time Series) object</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2196,7 +2198,7 @@ Attributes:
 <img alt="../../_images/2c32ba6f8b724a96def7b8a8275b3b9005d3ffc6b1ac28b2190a8ec04d8bcc7e.png" src="../../_images/2c32ba6f8b724a96def7b8a8275b3b9005d3ffc6b1ac28b2190a8ec04d8bcc7e.png" />
 </div>
 </div>
-<p>Similarly to HADCRUT5, the reconstruction shows a strong match with BEST, with a correlation of r=0.88 and CE = 0.69. This is still a strong match, since BEST was also not used in the calibration. The reconstruction still aligns well with an independent dataset and shows that the reproduction closely emulates LMRv2.1 as well as the instrumental record.</p>
+<p>Similarly to HADCRUT5, the reconstruction shows a strong match with BEST, with a correlation of <span class="math notranslate nohighlight">\(r=0.92\)</span> and <span class="math notranslate nohighlight">\(CE = 0.75\)</span>. This is still a strong match, since BEST was also not used in the calibration. The reconstruction still aligns well with an independent dataset and shows that the reproduction closely emulates LMRv2.1 as well as the instrumental record.</p>
 </section>
 <section id="plot-consensus">
 <h3>Plot Consensus<a class="headerlink" href="#plot-consensus" title="Link to this heading">#</a></h3>
@@ -2268,14 +2270,14 @@ Attributes:
 <img alt="../../_images/57f4bafe939aa0f8b3c7c2a2650c92e2dfb02fa24514037e4c76d2d180360c12.png" src="../../_images/57f4bafe939aa0f8b3c7c2a2650c92e2dfb02fa24514037e4c76d2d180360c12.png" />
 </div>
 </div>
-<p>The reconstruction aligns closely with the instrumental consensus series, with r=0.93 and CE=0.76. This consensus represents an average across multiple observational datasets, so strong agreement here reinforces that the reconstruction captures the core features of the instrumental record. The fact that all targets (HadCRUT4, GISTEMPv4, BEST, and the consensus) fall within the ensemble spread shows the robustness of the reproduced reconstruction.</p>
+<p>The reconstruction aligns closely with the instrumental consensus series, with <span class="math notranslate nohighlight">\(r=0.94\)</span> and <span class="math notranslate nohighlight">\(CE=0.76\)</span>. This consensus represents an average across multiple observational datasets, so strong agreement here reinforces that the reconstruction captures the core features of the instrumental record. The fact that all targets (HadCRUT4, GISTEMPv4, BEST, and the consensus) fall within the ensemble spread shows the robustness of the reproduced reconstruction.</p>
 </section>
 </section>
-<section id="validate-climate-field">
-<h2>Validate Climate Field<a class="headerlink" href="#validate-climate-field" title="Link to this heading">#</a></h2>
+<section id="validating-climate-field">
+<h2>Validating Climate Field<a class="headerlink" href="#validating-climate-field" title="Link to this heading">#</a></h2>
 <section id="load-field-reconstruction">
 <h3>Load field reconstruction<a class="headerlink" href="#load-field-reconstruction" title="Link to this heading">#</a></h3>
-<p>Load in the original LMR <code class="docutils literal notranslate"><span class="pre">air</span></code> (2m air temperature) climate field as a <em>cfr</em> <code class="docutils literal notranslate"><span class="pre">ClimateField</span></code> object and modify the format so that we can more easily compare it with our validation datasets using <em>cfr</em>. In this step, we will plot both the correlation (corr) and the coefficient of efficiency (CE) of 2m air temperature against the Berkeley Earth Surface Temperature (BEST) climate field, since that was what Tardif et al. (2019) used to validate their field reconstructions.</p>
+<p>Here we load in the original LMR <code class="docutils literal notranslate"><span class="pre">air</span></code> (2m air temperature) climate field as a <em>cfr</em> <code class="docutils literal notranslate"><span class="pre">ClimateField</span></code> object and modify the format so that we can more easily compare it with our validation datasets using <em>cfr</em>. In this step, we will plot both the correlation (corr) and the coefficient of efficiency (CE) of 2m air temperature against the Berkeley Earth Surface Temperature (BEST) climate field, since that was what Tardif et al. (2019) used to validate their field reconstructions.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load the data as a ClimateField object</span>
@@ -3360,6 +3362,8 @@ Attributes:
 <img alt="../../_images/920468097945404d38280bcc4e3a5853d989f2e270ce0cb7f769ab4982f78ee8.png" src="../../_images/920468097945404d38280bcc4e3a5853d989f2e270ce0cb7f769ab4982f78ee8.png" />
 </div>
 </div>
+<p>We see that the correlation is positive nearly everywhere, and quite high in many places, particularly tropical oceans, which tend to dominate the surface temperature field, explaining why the agreement on GMST was so high</p>
+<p>Now let us to do the same for the CE statistic:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then do the comparison (CE)</span>
@@ -3388,6 +3392,7 @@ Attributes:
 <img alt="../../_images/f61a71802e76bd5066e92fba5c7cb28d1524f9f3aa11fde6dd988ebec4897ce9.png" src="../../_images/f61a71802e76bd5066e92fba5c7cb28d1524f9f3aa11fde6dd988ebec4897ce9.png" />
 </div>
 </div>
+<p>CE is a much more stringent statistic than <span class="math notranslate nohighlight">\(r\)</span>, and here we start seeing more areas of disagreement (<span class="math notranslate nohighlight">\(CE &lt;0\)</span>) between our reconstruction and BEST.</p>
 </section>
 <section id="validating-the-original-lmrv2-1-using-best">
 <h3>Validating the original LMRv2.1 using BEST<a class="headerlink" href="#validating-the-original-lmrv2-1-using-best" title="Link to this heading">#</a></h3>
@@ -3481,12 +3486,12 @@ Attributes:
 <p><strong>Correlation (r)</strong>:
 The correlation maps show strong agreement across most of the globe, especially in the tropics, both land and ocean. The patterns look almost exactly the same between the original and reproduced versions, which suggests that the proxy database filtering steps were esential to emulating the reconstruction accurately.</p>
 <p><strong>Coefficient of Efficiency (CE)</strong>:
-CE is lower overall, which is as expected from the results of the paper, but still positive across most regions. Areas with negative CE are consistent within in both versions. The mean CE of 0.17 is fairly low but is a drastic improvement from negative values from past attempts at emulating LMRv2.1.</p>
+CE is lower overall, as expected but still positive across most regions. Areas with negative CE are consistent within in both versions. The mean CE of 0.17 is fairly low but is a drastic improvement from negative values from initial attempts at emulating LMRv2.1</p>
 <p>Overall, these plots suggest that the reproduced reconstruction preserves the spatial performance of the original and matches the observational target about as well as expected.</p>
 </section>
 <section id="validating-our-reconstruction-against-original-lmrv2-1">
 <h3>Validating our Reconstruction against original LMRv2.1<a class="headerlink" href="#validating-our-reconstruction-against-original-lmrv2-1" title="Link to this heading">#</a></h3>
-<p>We validated both against instrumental data, but it is also important to see how our reproduction compares to the original, using the original LMRv2.1 as the target.</p>
+<p>We validated both against instrumental data, but it is also important to see how our reproduction compares to the original, using the original LMRv2.1 as the target, which we do now:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then do the comparison</span>
@@ -3514,6 +3519,7 @@ CE is lower overall, which is as expected from the results of the paper, but sti
 <img alt="../../_images/66e90bb26cb19f07f8b0e1a0025affd34056c0b6557e689f2e20c018ef942dd0.png" src="../../_images/66e90bb26cb19f07f8b0e1a0025affd34056c0b6557e689f2e20c018ef942dd0.png" />
 </div>
 </div>
+<p>Same for CE:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Then do the comparison</span>
@@ -3546,8 +3552,8 @@ CE is lower overall, which is as expected from the results of the paper, but sti
 <p><strong>Correlation (r)</strong>:
 The correlation map has a global mean of 0.94, which is extremely high. Nearly the entire globe is bright red, meaning the two fields match both spatially and in time.</p>
 <p><strong>Coefficient of Efficiency (CE)</strong>:
-High CE values across most regions show that the reconstruction captures both variability and amplitude much better than a flat mean would. There are very few regions where the reconstruction underperforms the mean baseline, which is another drastic improvement from previous negative CE values.</p>
-<p>Again, this confirms that the reproduction is a good match to the original LMRv2.1, both spatially and averaged.</p>
+High CE values across most regions show that the reconstruction captures both variability and amplitude much better than the mean would. There are very few regions where the reconstruction underperforms the mean baseline, and these tend to be areas of strong midlatitude cyclone dynamics (particularly the Southern Ocean), which are not well covered.</p>
+<p>Again, this confirms that the reproduction is a good match to the original LMRv2.1, both for the surface temperature field and its global average.</p>
 </section>
 </section>
 <section id="summary">
@@ -3560,7 +3566,7 @@ High CE values across most regions show that the reconstruction captures both va
 <li><p>Spatial correlation and CE maps show nearly identical patterns against instrumental data and the orignal LMRv2.1</p></li>
 <li><p>There is strong agreement with independent observational targets (HadCRUT4, GISTEMPv4, BEST)</p></li>
 </ul>
-<p>In future work:</p>
+<p>In future work, we will:</p>
 <ul class="simple">
 <li><p>More thoroughly explore how different filtering choices in the proxy database affect skill.</p></li>
 <li><p>Include additional calibration targets such as precipitation</p></li>
@@ -3641,11 +3647,11 @@ High CE values across most regions show that the reconstruction captures both va
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-gmst-against-instrumental-datasets">Validating GMST Against Instrumental Datasets</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-giss-surface-temperature-analysis-gistemp">Validate against GISS Surface Temperature Analysis (GISTEMP)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-hadcrut4">Validate against HadCRUT4</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-against-berkeley-earth-surface-temperature-best">Validate against Berkeley Earth Surface Temperature (BEST)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#validation-against-berkeley-earth-surface-temperature-best">Validation against Berkeley Earth Surface Temperature (BEST)</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-consensus">Plot Consensus</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validate-climate-field">Validate Climate Field</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#validating-climate-field">Validating Climate Field</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-field-reconstruction">Load field reconstruction</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-reproduced">Loading reproduced</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-proxy-database-for-overlay">Loading Proxy Database for Overlay</a></li>
