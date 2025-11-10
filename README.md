@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1059672864.svg)](https://doi.org/10.5281/zenodo.17575097)
+
 # Reproducing LMRv2.1 with the cfr package
 
 By [Tanaya Gondhalekar](https://orcid.org/0009-0004-2440-3266), [Deborah Khider](https://orcid.org/0000-0001-7501-8430) & [Julien Emile-Geay](https://orcid.org/0000-0001-5920-4751). 
